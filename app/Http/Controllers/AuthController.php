@@ -14,6 +14,14 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
+
     public function register()
     {
         return view('auth.register');
@@ -24,11 +32,10 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'address' => 'required',
-            'phoneNo' => 'required',
+            'phoneNo' => 'required|min:5|max:11',
             'password' => 'required|min:3',
         ]);
 
-        // Membuat pengguna baru
         $user = User::create([  
             'name' => $request->name,
             'address' => $request->address,
@@ -50,7 +57,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if(Auth::user()->role_id == 1) {
-                return redirect('index');
+                return redirect('home');
             } elseif(Auth::user()->role_id == 2) {
                 return redirect('dashboard');
             } else {
