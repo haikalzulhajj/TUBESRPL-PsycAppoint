@@ -249,8 +249,8 @@ h6 {
 }
 
 .card-title {
-  padding: 20px 0 15px 0;
-  font-size: 42px;
+  padding: 5px 0 0 0;
+  font-size: 36px;
   font-weight: 600;
   color: #012970;
   line-height: 1.5;
@@ -273,6 +273,10 @@ h6 {
   color: #899bbd;
   font-size: 14px;
   font-weight: 400;
+}
+
+.card-description {
+  margin-bottom: 40px;
 }
 
 .card-body {
@@ -1263,4 +1267,14 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+
+.icon-custom {
+  color: #28746f;
+  margin: 20px;
+}
+
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -27,7 +28,7 @@ class UserController extends Controller
             'pickup_date' => 'required',
             'pickup_time' => 'required',
             'category_trash' => 'required',
-            'amount' => 'required',
+            'amount' => 'required|numeric',
             'notes' => 'required',
             'file_payment' => 'required',
         ]);
@@ -45,6 +46,19 @@ class UserController extends Controller
         ]);
 
         if($ordersubmission) {
+            $user = User::find($user_id);
+            $amount = $request->input('amount');
+            if ($user) {
+                $user->total_daur_ulang += $amount;
+                if($amount < 10 ) {
+                    $user->total_points += 5;
+                } elseif ($amount > 10 && $amount < 20) {
+                    $user->total_points += 10;
+                } elseif ($amount > 20 ) {
+                    $user->total_points += 15;
+                }
+                $user->save();
+            }
             return view ('customer.form-success');
         }
     }
