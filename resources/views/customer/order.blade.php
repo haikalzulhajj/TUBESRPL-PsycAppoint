@@ -4,113 +4,123 @@
 
 @section('content')
 
-    <div id="setoran-sampah" class="bg-light">
+<main id="main" class="main">
 
-            <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <img src="images/logo.png" alt="logo">
-            </div>
+    <div class="pagetitle">
+    <h1>Order</h1>
+    </div><!-- End Page Title -->
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="home">
-                        <img src="icons/home-icon.png" alt="logo">
-                        <span>Home</span>    
-                    </a>
-                </li>
-                <li>
-                    <a href="pesan">
-                        <img src="icons/setoran-icon.png" alt="logo">
-                        <span>Setoran Sampah</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="history">
-                        <img src="icons/history-icon.png" alt="logo">
-                        <span>History</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="redeemspoints">
-                        <img src="icons/points-icon.png" alt="logo">
-                        <span>Redeems Points</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="edukasi">
-                        <img src="icons/edukasi-icon.png" alt="logo">
-                        <span>Edukasi Lingkungan</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="customerservice">
-                        <img src="icons/cs-icon.png" alt="logo">
-                        <span>Customer Service</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        
-        <div id="content" class="p-5">
-            <div class="bg-white p-4 rounded-3 shadow">
-                <h5>Biodata</h5>
-                <hr>
-                <form action="order" method="post">
-                    @csrf
-                    <div class="row row-cols-3">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="my-input">Name</label>
-                                <input id="my-input" class="form-control" style="background-color: #e0e0e0;" type="text" name="name" value="<?php echo Auth::user()->name; ?>" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="my-input">No. HP</label>
-                                <input id="my-input" class="form-control" style="background-color: #e0e0e0;" type="number" name="phoneNo" value="<?php echo Auth::user()->phoneNo; ?>" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="my-input">Alamat</label>
-                                <input id="my-input" class="form-control" style="background-color: #e0e0e0;" type="text" name="address" value="<?php echo Auth::user()->address; ?>" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="my-input">Tanggal Penjemputan</label>
-                                <input id="my-input" class="form-control" type="date" name="pickup_date">
-                            </div>
-                            <div class="form-group">
-                                <label for="my-input">Jam Penjemputan</label>
-                                <input id="my-input" class="form-control" type="time" name="pickup_time">
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5>Kategori Sampah</h5>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">Biodata</h5>
                     <hr>
-                        <div class="form-group">
-                            <label for="my-input">organik / anorganik</label>
-                            <select name="category_trash" class="form-control" >
-                                <option>Organik</option>
-                                <option>Anorganik</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="my-input">Berat (kg)</label>
-                            <input id="my-input" class="form-control" type="number" name="amount">
-                        </div>
-                        <div class="form-group">
-                            <label for="my-input">Catatan</label>
-                            <input id="my-input" class="form-control" type="text" name="notes">
-                        </div>
-                        <div class="form-group">
-                            <label for="my-input">Pembayaran</label>
-                            <input id="my-input" class="form-control" type="file" name="file_payment">
-                        </div>
 
-                        <div class="text-start">
-                            <button type="submit" class="btn btn-success px-5"> SUBMIT </button>
-                        </div>
-                </form>
+                        <!-- Biodata Form Elements -->
+                        <form action="order" method="post">
+                            @csrf
+                            <div class="row mb-3">
+                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-10">
+                                    <input id="inputName" class="form-control" style="background-color: #F3F2F2;" type="text" name="name" value="<?php echo Auth::user()->name; ?>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">No.Hp</label>
+                                <div class="col-sm-10">
+                                    <input id="inputNumber" class="form-control" style="background-color: #F3F2F2;" type="number" name="phoneNo" value="<?php echo Auth::user()->phoneNo; ?>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputAddress" class="col-sm-2 col-form-label">Alamat</label>
+                                <div class="col-sm-10">
+                                    <input id="inputAddress" class="form-control" style="background-color: #F3F2F2;" type="text" name="address" value="<?php echo Auth::user()->address; ?>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputDate" class="col-sm-2 col-form-label">Tanggal Penjemputan</label>
+                                <div class="col-sm-10">
+                                    <input id="inputDate" class="form-control" type="date" name="pickup_date" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputTime" class="col-sm-2 col-form-label">Jam Penjemputan</label>
+                                <div class="col-sm-10">
+                                    <input id="inputTime" class="form-control" type="time" name="pickup_time" required>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Kategori</h5>
+                        <hr>
+                            
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Organik / Anorganik</label>
+                                <div class="col-sm-10">
+                                    <select name="category_trash" class="form-select" aria-label="Default select example" required>
+                                        <option selected>Organik</option>
+                                        <option value="anorganik">Anorganik</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputAmount" class="col-sm-2 col-form-label">Berat (kg)</label>
+                                <div class="col-sm-10">
+                                    <input id="inputAmount" class="form-control" type="number" name="amount" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputNotes" class="col-sm-2 col-form-label">Catatan</label>
+                                <div class="col-sm-10">
+                                    <input id="inputNotes" class="form-control" type="textarea" name="notes" required>
+                                </div>
+                            </div>
+                    
+                    </div>
+                </div>
             </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pembayaran</h5>
+                        <hr>
+                            
+                            <div class="row mb-3">
+                                <label for="inputFilePayment" class="col-sm-2 col-form-label">Bukti Pembayaran</label>
+                                <div class="col-sm-10">
+                                    <input id="inputFilePayment" class="form-control" type="file" name="file_payment" require>
+                                </div>
+                            </div>
+
+                            <div class="card-description">
+                                <p>Keterangan Pembayaran : </p>
+                                <ul>
+                                    <li class="list-group-item">1. Berat 0 - 5 Kg = Rp 25.000,-</li>
+                                    <li class="list-group-item">2. Berat 6 - 10 Kg = Rp 40.000,-</li>
+                                    <li class="list-group-item">3. Berat > 10 Kg = Rp 50.000,-</li>
+                                </ul>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-custom btn-lg px-5"> SUBMIT </button>
+                            </div>
+                            
+                        </form><!-- End General Form Elements -->
+
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
+
+</main><!-- End #main -->
 
 @endsection

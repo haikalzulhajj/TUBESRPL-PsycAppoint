@@ -106,14 +106,14 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link collapsed" href="home" data-bs-target="#collapseHome">
           <i class="bi bi-house"></i>
           <span>Beranda</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="order" data-bs-target="#collapseOrder">
           <i class="bi bi-truck"></i>
           <span>Setoran Sampah</span>
         </a>
