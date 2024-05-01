@@ -74,13 +74,6 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -110,42 +103,42 @@
           <i class="bi bi-house"></i>
           <span>Beranda</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="order" data-bs-target="#collapseOrder">
           <i class="bi bi-truck"></i>
           <span>Setoran Sampah</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-clock-history"></i>
           <span>Riwayat</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-star-fill"></i>
           <span>Tukar Point</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-newspaper"></i>
           <span>Edukasi Lingkungan</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-headset"></i>
           <span>Customer Service</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
     </ul>
 
   </aside><!-- End Sidebar-->
