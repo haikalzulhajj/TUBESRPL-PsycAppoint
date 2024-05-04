@@ -99,7 +99,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home" data-bs-target="#collapseHome">
+        <a class="nav-link collapsed" href="dashboard" data-bs-target="#collapseHome">
           <i class="bi bi-house"></i>
           <span>Beranda</span>
         </a>
@@ -134,7 +134,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="customer-service">
+        <a class="nav-link collapsed" href="response-complaint">
           <i class="bi bi-headset"></i>
           <span>Customer Service</span>
         </a>
