@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     
     <!-- Favicons -->
@@ -28,13 +27,6 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-  .dotted-line {
-        border-top: 1px dotted #000; /* Mengatur garis titik-titik dengan warna hitam */
-        width: 80%; /* Lebar garis */
-        margin: 20px auto; /* Posisi garis di tengah halaman */
-    }
-</style>
 </head>
 
 <body>
@@ -51,13 +43,13 @@
 
       <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo Auth::user()->name ?></span>
+            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo Auth::user()->name; ?></span>
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6><?php echo Auth::user()->name ?></h6>
-              <span><?php echo Auth::user()->address  ?></span>
+              <h6><?php echo Auth::user()->name; ?></h6>
+              <span><?php echo Auth::user()->address; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -107,14 +99,14 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link <?= request()->segment(1) != "home" ?  "collapsed" :"" ?>" href="<?= url('/') ?>">
+        <a class="nav-link collapsed" href="home" data-bs-target="#collapseHome">
           <i class="bi bi-house"></i>
           <span>Beranda</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="" data-bs-target="#collapseOrder">
+        <a class="nav-link collapsed" href="order" data-bs-target="#collapseOrder">
           <i class="bi bi-truck"></i>
           <span>Setoran Sampah</span>
         </a>
@@ -128,16 +120,9 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>">
+        <a class="nav-link collapsed" href="#">
           <i class="bi bi-star-fill"></i>
-          <span>Tukar Point </span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link <?= request()->segment(1) != "history-all-redeem-point" ?  "collapsed" :"" ?>" href="<?= url('history-all-redeem-point') ?>">
-          <i class="bi bi-star-fill"></i>
-          <span>Riwayat Tukar Point </span>
+          <span>Tukar Point</span>
         </a>
       </li>
 
@@ -149,7 +134,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="customer-service">
+        <a class="nav-link collapsed" href="response-complaint">
           <i class="bi bi-headset"></i>
           <span>Customer Service</span>
         </a>
@@ -174,7 +159,6 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
-  @yield('script')
 </body>
 
 </html>

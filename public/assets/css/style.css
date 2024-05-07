@@ -49,14 +49,14 @@ h6 {
 # Page Title
 --------------------------------------------------------------*/
 .pagetitle {
-  margin-bottom: 10px;
+  margin: 10px 0 20px 0;
 }
 
 .pagetitle h1 {
   font-size: 24px;
   margin-bottom: 0;
   font-weight: 600;
-  color: #012970;
+  color: #276561;
 }
 
 /*--------------------------------------------------------------
@@ -68,7 +68,7 @@ h6 {
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   border-radius: 15px;
-  padding: 10px 10px 10px 10px ;
+  padding: 10px 0 10px 0 ;
 }
 
 .btn-custom:hover {
@@ -1276,5 +1276,18 @@ h6 {
   color: #28746f;
   margin: 20px;
 }
+
+.icon-background {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #276561; 
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  text-align: center; 
+  line-height: 24px; 
+}
+
 
 
