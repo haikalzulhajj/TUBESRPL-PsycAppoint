@@ -139,7 +139,6 @@
           <span>Customer Service</span>
         </a>
       </li>
-    </ul>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="manageuser">

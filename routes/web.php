@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\schedulepickupController;
 use App\Http\Middleware\AuthenticatingMiddleware;
+use App\Http\Controllers\schedulepickupController;
+
+
 
 Route::middleware(AuthenticatingMiddleware::class)->group(function () {
     Route::get('/', [AuthController::class, 'login']);
@@ -27,4 +31,14 @@ Route::get('history', [schedulepickupController::class, 'getHistory']);
 
 Route::get('redeemspoints', [UserController::class, 'getRedeemspoints']);
 
-Route::get('manageuser', [AdminController::class, 'getManageuser']);
+Route::get('manageuser', [AdminController::class, 'showUsers'])->name('manageuser');
+
+Route::get('admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admin.edit');
+Route::put('admin/users/edit/{user}', [AdminController::class, 'update'])->name('user.update');
+
+
+
+// Route::resources([
+//     'user' => UserController::class,
+//     'admin' => AdminController::class,
+// ]);
