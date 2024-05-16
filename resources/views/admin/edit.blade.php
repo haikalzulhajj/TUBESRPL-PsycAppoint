@@ -1,6 +1,6 @@
 <!-- resources/views/admin/edit.blade.php -->
 
-<!-- @extends('admin.dashboard') -->
+@extends('admin.dashboard')
 
 @section('title', 'Edit User')
 
@@ -15,8 +15,8 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
             </div>
             <div class="mb-3">
-                <label for="address" class="form-label">Role</label>
-                <input type="text" class="form-control" id="role" name="role" value="{{ $user->role_id }}">
+                <label for="role" class="form-label">Role</label>
+                <input type="text" class="form-control" id="role" name="role_id" value="{{ $user->role_id }}">
             </div>
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
@@ -37,6 +37,4 @@
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
-
-    
 @endsection

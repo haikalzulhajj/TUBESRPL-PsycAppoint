@@ -119,24 +119,19 @@
         </a>
       </li>
 
+      @if(Auth::user()->role_id == 2)
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="history">
           <i class="bi bi-clock-history"></i>
           <span>Riwayat</span>
         </a>
       </li>
+      @endif
 
       <li class="nav-item">
         <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>">
           <i class="bi bi-star-fill"></i>
           <span>Tukar Point </span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link <?= request()->segment(1) != "history-all-redeem-point" ?  "collapsed" :"" ?>" href="<?= url('history-all-redeem-point') ?>">
-          <i class="bi bi-star-fill"></i>
-          <span>Riwayat Tukar Point </span>
         </a>
       </li>
 
@@ -148,12 +143,12 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="response-complaint">
+        <a class="nav-link collapsed" href="customer-service">
           <i class="bi bi-headset"></i>
           <span>Customer Service</span>
         </a>
       </li>
-    </ul>
+
 
   </aside><!-- End Sidebar-->
 

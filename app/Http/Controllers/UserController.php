@@ -31,13 +31,7 @@ class UserController extends Controller
                             ->get();
         return view('customer.reedem-point',$data);
     }
-    public function historyAllReedemPoint()
-    {
-        $data['history'] = RedeemPoint::select("redeem_points.*",'user.name')
-                            ->leftJoin('user','user.user_id','=','redeem_points.user_id')
-                            ->get();
-        return view('customer.reedem-point-history',$data);
-    }
+
     function storeReedemPoint(Request $request){
         try {
             $point = new RedeemPoint();

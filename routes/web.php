@@ -58,7 +58,7 @@ Route::get('history', [schedulepickupController::class, 'getHistory']);
 //* Redeems Points
 Route::get('redeemspoints', [UserController::class, 'getRedeemspoints']);
 Route::get('redeem-point', [UserController::class, 'reedemPoint']);
-Route::get('history-all-redeem-point', [UserController::class, 'historyAllReedemPoint']);
+Route::get('history-all-redeem-point', [AdminController::class, 'historyAllReedemPoint']);
 Route::post('store-redeem-point', [UserController::class, 'storeReedemPoint']);
 //* End Redeems Points
 
