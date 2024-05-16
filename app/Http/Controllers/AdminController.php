@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Role; // Import the Role model
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Complaint;
 
 class AdminController extends Controller
 {
@@ -40,5 +41,15 @@ class AdminController extends Controller
     return redirect()->route('manageuser')->with('success', 'User updated successfully.');
     }
 
-    
-   }
+    public function getResponseComplaint()
+    {
+        $complaintdata = Complaint::all();
+        return view('admin.response-complaint', compact('complaintdata'));
+    }
+
+    // public function dataComplaint() 
+    // {
+    //     $complaintdata = Complaint::all();
+    //     return view('admin.response-complaint', compact('laboratoriums'));
+    // }
+}

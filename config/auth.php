@@ -66,6 +66,7 @@ return [
             'table' => 'user', // Pastikan di sini menggunakan 'user'
         ],
     ],
+            'model' => env('AUTH_MODEL', App\Models\User::class),
 
         // 'users' => [
         //     'driver' => 'database',
