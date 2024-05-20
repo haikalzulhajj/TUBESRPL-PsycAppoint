@@ -53,10 +53,6 @@
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo Auth::user()->name; ?></span>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6><?php echo Auth::user()->name ?></h6>
-              <span><?php echo Auth::user()->address  ?></span>
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
@@ -127,23 +123,16 @@
       @if(Auth::user()->role_id == 2)
       <li class="nav-item">
         <a class="nav-link collapsed" href="history">
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
           <i class="bi bi-clock-history"></i>
           <span>Riwayat</span>
         </a>
       </li>
       @endif
-
+      
       <li class="nav-item">
         <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>">
           <i class="bi bi-star-fill"></i>
           <span>Tukar Point </span>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-star-fill"></i>
-          <span>Tukar Point</span>
         </a>
       </li>
 
@@ -156,10 +145,10 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="customer-service">
+          <i class="bi bi-headset"></i>
           <span>Customer Service</span>
+        </a>
       </li>
-
-    </ul>
 
   </aside><!-- End Sidebar-->
 

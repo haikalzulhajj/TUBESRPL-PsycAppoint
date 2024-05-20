@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin-layout')
 
 @section('content')
 <section id="list">
@@ -37,22 +37,22 @@
             <td>{{ $order->file_payment }}</td>
             <td>Pending</td>  
             <td>
-            <form action="{{ route('history', $order->id) }}" method="POST">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-danger">Hapus</button>
-</form>
+            <form action="{{ route('history.delete', ['id'=>$order->schedule_id]) }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Hapus</button>
+            </form>
 
-            </td>
-          </tr>
+                      </td>
+                    </tr>
 
-          @endforeach
-        </tbody>
-      </table>
-    </div>
-    @else
-        <p>Tidak ada order di sini.</p>
-    @endif
-  </div>
-</section>
-@endsection
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+              @else
+                  <p>Tidak ada order di sini.</p>
+              @endif
+            </div>
+          </section>
+          @endsection

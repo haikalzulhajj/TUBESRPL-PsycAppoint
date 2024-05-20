@@ -113,23 +113,9 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="order" data-bs-target="#collapseOrder">
-          <i class="bi bi-truck"></i>
-          <span>Setoran Sampah</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="history">
           <i class="bi bi-clock-history"></i>
-          <span>Riwayat</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>">
-          <i class="bi bi-star-fill"></i>
-          <span>Tukar Point </span>
+          <span>Riwayat Pesanan</span>
         </a>
       </li>
 

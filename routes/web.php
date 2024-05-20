@@ -24,81 +24,37 @@ Route::middleware(AuthenticatingMiddleware::class)->group(function () {
     Route::post('register', [AuthController::class, 'registration']);
 });
 
+// Auth Routes
 Route::get('logout', [AuthController::class, 'logout']);
 
+// User Routes
 Route::get('home', [UserController::class, 'getHome']);
-Route::get('dashboard', [AdminController::class, 'getDashboard']);
-
 Route::get('order', [UserController::class, 'createOrder']);
 Route::post('order', [UserController::class, 'submitOrder'])->name('order');
+Route::delete('order/{id}', [AdminController::class, 'destroy'])->name('order.destroy');
 
-Route::get('history', [UserController::class, 'getHistory']);
-Route::get('history', [schedulepickupController::class, 'getHistory']);
+// History Routes
+Route::get('history', [AdminController::class, 'getHistory'])->name('history');
+Route::delete('history/{id}', [AdminController::class, 'deleteHistory'])->name('history.delete');
 
-Route::get('redeemspoints', [UserController::class, 'getRedeemspoints']);
-
-Route::get('manageuser', [AdminController::class, 'showUsers'])->name('manageuser');
-
-Route::get('admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admin.edit');
-Route::put('admin/users/edit/{user}', [AdminController::class, 'update'])->name('user.update');
-
-
-
-// Route::resources([
-//     'user' => UserController::class,
-//     'admin' => AdminController::class,
-// ]);
-//* End Authentication
-
-//* Penjemputan Sampah
-Route::get('order', [UserController::class, 'createOrder']);
-Route::post('order', [UserController::class, 'submitOrder'])->name('order');
-//* End Penjemputan Sampah
-
-//* History
-Route::get('history', [UserController::class, 'getHistory']);
-Route::get('history', [schedulepickupController::class, 'getHistory']);
-
-//* End History
-
-//* Redeems Points
+// Redeem Points Routes
 Route::get('redeemspoints', [UserController::class, 'getRedeemspoints']);
 Route::get('redeem-point', [UserController::class, 'reedemPoint']);
 Route::get('history-all-redeem-point', [AdminController::class, 'historyAllReedemPoint']);
 Route::post('store-redeem-point', [UserController::class, 'storeReedemPoint']);
-//* End Redeems Points
 
-//* Customer Sercice 
+// Admin Routes
+Route::get('dashboard', [AdminController::class, 'getDashboard']);
+Route::get('manageuser', [AdminController::class, 'showUsers'])->name('manageuser');
+Route::get('admin/users/edit/{user}', [AdminController::class, 'edit'])->name('admin.edit');
+Route::put('admin/users/edit/{user}', [AdminController::class, 'update'])->name('user.update');
+
+// Customer Service Routes
 Route::get('customer-service', [UserController::class, 'getCustomerService']);
 Route::post('customer-service', [UserController::class, 'submitComplaint']);
-
-//* End Customer Sercice 
-
-
-/*--------------------------------------------------------------
-# Admin
---------------------------------------------------------------*/
-
 Route::get('response-complaint', [AdminController::class, 'getResponseComplaint']);
-Route::delete('order/{id}', [UserController::class, 'destroy'])->name('order.destroy');
-Route::delete('order/{id}', [UserController::class, 'destroy'])->name('destroy');
 
-
-Route::get('history', [UserController::class, 'index'])->name('history.index');
+// User Store Route
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 
-Route::get('history', [UserController::class, 'getHistory'])->name('history');
-
-Route::delete('history/{id}', [UserController::class, 'deleteHistory'])->name('deleteHistory');
-Route::delete('history/{id}', [UserController::class, 'deleteHistory'])->name('history');
-
-Route::delete('history/{id}', [UserController::class, 'destroy'])->name('history.destroy');
-Route::delete('history/{id}', [UserController::class, 'delete'])->name('history.delete');
-
-Route::resource('order', 'UserController');
-
-Route::delete('/history/{id}', 'HistoryController@deleteHistory')->name('history.delete');
-
-
-
-Route::get('redeemspoints', [UserController::class, 'getRedeemspoints']);   
+// Resource Route

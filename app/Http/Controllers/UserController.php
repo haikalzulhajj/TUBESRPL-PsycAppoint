@@ -97,21 +97,6 @@ class UserController extends Controller
         }
     }
 
-    public function getHistory()
-    {
-        $data_order = Order::all();
-        return view('historyschedulepickup.index', ['data_order' => $data_order]);
-    }
-    
-    public function deleteHistory($id)
-    {
-        $order = Order::findOrFail($id);
-        $order->delete();
-        return redirect()->route('history')->with('success', 'Data history berhasil dihapus');
-    }
-
-    
-
     public function getRedeemspoints()
     {
         return view('customer.redeempoint1');
@@ -146,23 +131,6 @@ class UserController extends Controller
             return redirect('customer-service');
         }
     }
-    
-    public function destroy($id)
-    {
-        // Cari mobil berdasarkan ID
-        $order = Order::find($id);
-    
-        // Pastikan mobil ditemukan
-        if (!$order) {
-            return redirect()->back()->with('error', 'order tidak ditemukan.');
-        }
-    
-        // Hapus mobil
-        $order->delete();
-    
-        // Redirect kembali ke halaman sebelumnya dengan pesan sukses
-        return redirect()->back()->with('success', 'Mobil berhasil dihapus.');
-    }   
     
 }
 

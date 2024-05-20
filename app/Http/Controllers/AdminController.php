@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Order;
+use App\Models\Complaint;
+use App\Models\RedeemPoint;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\User;
-use App\Models\RedeemPoint;
-use App\Models\Role; // Import the Role model
 use Illuminate\Support\Facades\Auth;
-use App\Models\Complaint;
+use App\Models\Role; // Import the Role model
 
 class AdminController extends Controller
 {
@@ -65,6 +66,38 @@ class AdminController extends Controller
                             ->get();
         return view('admin.reedem-point-history',$data);
     }
+
+    public function getHistory()
+    {
+        $data_order = Order::all();
+        return view('historyschedulepickup.index', ['data_order' => $data_order]);
+    }
+    
+    public function deleteHistory(Request $request, $id)
+    {
+        error_log($request->id);
+        $order = Order::findOrFail($id);
+        $order->delete();
+        return redirect()->route('history')->with('success', 'Data history berhasil dihapus');
+    }
+
+    public function destroy($id)
+    {
+        // Cari mobil berdasarkan ID
+        $order = Order::find($id);
+    
+        // Pastikan mobil ditemukan
+        if (!$order) {
+            return redirect()->back()->with('error', 'order tidak ditemukan.');
+        }
+    
+        // Hapus mobil
+        $order->delete();
+    
+        // Redirect kembali ke halaman sebelumnya dengan pesan sukses
+        return redirect()->back()->with('success', 'Mobil berhasil dihapus.');
+    }   
+
     
     // public function dataComplaint() 
     // {
