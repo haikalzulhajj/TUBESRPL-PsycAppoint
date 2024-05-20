@@ -57,6 +57,11 @@
             <li class="dropdown-header">
               <h6><?php echo Auth::user()->name ?></h6>
               <span><?php echo Auth::user()->address  ?></span>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6><?php echo Auth::user()->name; ?></h6>
+              <span><?php echo Auth::user()->address; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -106,7 +111,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="dashboard" data-bs-target="#collapseHome">
+        <a class="nav-link collapsed" href="home" data-bs-target="#collapseHome">
           <i class="bi bi-house"></i>
           <span>Beranda</span>
         </a>
@@ -122,6 +127,8 @@
       @if(Auth::user()->role_id == 2)
       <li class="nav-item">
         <a class="nav-link collapsed" href="history">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
           <i class="bi bi-clock-history"></i>
           <span>Riwayat</span>
         </a>
@@ -132,6 +139,11 @@
         <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>">
           <i class="bi bi-star-fill"></i>
           <span>Tukar Point </span>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-star-fill"></i>
+          <span>Tukar Point</span>
         </a>
       </li>
 
@@ -144,11 +156,10 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="customer-service">
-          <i class="bi bi-headset"></i>
           <span>Customer Service</span>
-        </a>
       </li>
 
+    </ul>
 
   </aside><!-- End Sidebar-->
 

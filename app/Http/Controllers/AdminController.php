@@ -8,7 +8,6 @@ use App\Models\User;
 use App\Models\RedeemPoint;
 use App\Models\Role; // Import the Role model
 use Illuminate\Support\Facades\Auth;
-
 use App\Models\Complaint;
 
 class AdminController extends Controller
