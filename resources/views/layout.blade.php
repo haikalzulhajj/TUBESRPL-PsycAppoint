@@ -34,6 +34,9 @@
         width: 80%; /* Lebar garis */
         margin: 20px auto; /* Posisi garis di tengah halaman */
     }
+  .nav-profile .dropdown-toggle {
+        color: purple; /* Change the color of the username text to purple */
+    }
 </style>
 </head>
 
@@ -102,55 +105,56 @@
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+<aside id="sidebar" class="sidebar">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+<ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="home" data-bs-target="#collapseHome">
-          <i class="bi bi-house"></i>
-          <span>Beranda</span>
-        </a>
-      </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="home" data-bs-target="#collapseHome" style="color: #800080;">
+      <i class="bi bi-house" style="color: #9B4F7F;"></i>
+      <span>Home</span>
+    </a>
+  </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="order" data-bs-target="#collapseOrder">
-          <i class="bi bi-truck"></i>
-          <span>Setoran Sampah</span>
-        </a>
-      </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="order" data-bs-target="#collapseOrder" style="color: #800080;">
+      <i class="bi bi-people" style="color: #9B4F7F;"></i>
+      <span>Appointment</span>
+    </a>
+  </li>
 
-      @if(Auth::user()->role_id == 2)
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="history">
-          <i class="bi bi-clock-history"></i>
-          <span>Riwayat</span>
-        </a>
-      </li>
-      @endif
-      
-      <li class="nav-item">
-        <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>">
-          <i class="bi bi-star-fill"></i>
-          <span>Tukar Point </span>
-        </a>
-      </li>
+  @if(Auth::user()->role_id == 2)
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="history" style="color: #800080;">
+      <i class="bi bi-clock-history" style="color: #9B4F7F;"></i>
+      <span>Riwayat</span>
+    </a>
+  </li>
+  @endif
+  
+  <li class="nav-item">
+    <a class="nav-link <?= request()->segment(1) != "redeem-point" ?  "collapsed" :"" ?>" href="<?= url('redeem-point') ?>" style="color: #800080;">
+      <i class="bi bi-star-fill" style="color: #9B4F7F;"></i>
+      <span>Tukar Point</span>
+    </a>
+  </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-newspaper"></i>
-          <span>Edukasi Lingkungan</span>
-        </a>
-      </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" style="color: #800080;">
+      <i class="bi bi-newspaper" style="color: #9B4F7F;"></i>
+      <span>Blog</span>
+    </a>
+  </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="customer-service">
-          <i class="bi bi-headset"></i>
-          <span>Customer Service</span>
-        </a>
-      </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="customer-service" style="color: #800080;">
+      <i class="bi bi-book" style="color: #9B4F7F;"></i>
+      <span>Journaling</span>
+    </a>
+  </li>
 
-  </aside><!-- End Sidebar-->
+</aside><!-- End Sidebar-->
+
 
   @yield('content')
 

@@ -1,42 +1,47 @@
 @extends('layout')
 
-@section('title', 'WhizCycle')
+@section('title', 'Setara.id')
 
 @section('content')
 
-    <main id="main" class="main">
-        <!-- Page Content  -->
-        <div class="pagetitle">
-            <h1>Beranda</h1>
-        </div>
+<main id="main" class="main">
+    <!-- Page Content  -->
+    <div class="pagetitle">
+        <h1 style="color: #6F2C80;">Homepage</h1>
+    </div>
 
-        <section class="section">
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <h1 class="card-title">Jadwalkan Pengambilan Sampah Anda Sekarang! Dengan Mudah dan Efisien!</h1>
-                                    <p class="card-content">Aplikasi WhizCycle adalah solusi untuk menyelesaikan masalah sosial tentang kebersihan lingkungan. 
-                                        <span>
-                                            Mulai sekarang, atur jadwal pengambilan sampah Anda dengan mudah! Pilih tanggal dan tentukan waktu pengumpulan sampah Anda. Kami siap membantu Anda menjaga lingkungan bersih dan memberikan layanan yang praktis dan efisien. Ayo beraksi sekarang!
-                                        </span>
-                                    </p>
+    <section class="section">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Butuh Teman Cerita? Yuk, Buat Janji di PsycAppoint! 🌼</h1>
+                        <p class="card-content">Punya masalah soal cinta, keluarga, kerjaan, atau hal pribadi? Di PsycAppoint, kamu bisa bikin janji bersama konselor, terapis, atau psikolog dengan mudah.
+                            <span>
+                            Curhatin apa aja yang bikin kamu kepikiran dan dapatkan saran serta dukungan yang kamu butuhin. Yuk, bareng-bareng kita prioritaskan dan menjaga kesehatan mental kita.
+                        </p>
 
-                                    <div class="text-start">
-                                        <a href ="order" name="order" class="btn-custom btn-lg">Pesan Ojol</a>
-                                    </div>
-                            </div>
-                            <div class="col-md-3 card-img-container">
-                                <img src="images/Driver.png" alt="image" class="card-img">
-                            </div>
+                        <div class="text-start">
+                            <a href="order" name="order" class="btn-custom btn-sm" style="background-color: purple;">Make an Appointment Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="col-md-3">
+                <div class="card card-img-container">
+                    <img src="images/Sharing.jpg" alt="image" class="card-img">
+                </div>
+                <div class="card card-img-container">
+                    <img src="images/Sharing.jpg" alt="image" class="card-img">
+                </div>
+                <div class="card card-img-container">
+                    <img src="images/Sharing.jpg" alt="image" class="card-img">
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-    </main>
+</main>
 
 @endsection
