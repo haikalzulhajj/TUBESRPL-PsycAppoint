@@ -1,72 +1,108 @@
 body {
-    overflow: auto;
-    background-color: #f8f9fa; /* Light background for better contrast */
+    background: linear-gradient(to right, #ffffff, #ffffff); /* Ganti warna sesuai pilihan Anda */
 }
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
-    font-weight: 300;
-    line-height: 1.5em;
-    color: #999;
-}
-
-.min-height-container {
-    min-height: 100vh;
-}
-
-.custom-bg-purple {
-    background-color: purple;
-}
-
-.bold-label {
-    font-weight: bold;
-}
-
-.btn-white {
-    background-color: #ffffff;
-}
-
-.btn-white:hover {
-    background-color: #ffffff;
-}
-
-.input-lg {
-    padding: .6rem 0.8rem;
-    font-size: 1rem;
-    line-height: 1.2;
-    border-radius: .3rem;
-}
-
-.custom-img-size {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
-}
-
-.card {
-    padding: 1rem;
-}
-
-h1, h4, p, label {
-    font-size: 0.9em;
-}
-
-/* New styles for centering */
-.centered-container {
+.container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px; /* Added padding for better spacing */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.background-img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Menempatkan gambar di belakang elemen lainnya */
+}
+
+.background-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mencakup seluruh kontainer */
+    opacity: 0.4; /* Mengurangi opacity untuk memberikan kontras dengan kotak sign-in */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Menyamakan tinggi kontainer teks dan gambar */
+    margin-bottom: 20px;
+}
+
+.text-container h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 20px 0; /* Menambahkan margin atas dan bawah */
 }
 
 .card {
+    background-color: #ffffff; /* Latar belakang putih */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     width: 100%;
-    max-width: 400px; /* Adjusted width for better centering */
+    text-align: center;
+    position: relative; /* Menambahkan posisi relatif untuk mengikuti kontainer */
+    z-index: 1; /* Menempatkan kotak sign-in di atas gambar */
 }
 
-.text-center img {
-    margin-bottom: 20px; /* Added margin for spacing */
+.card-title {
+    color: #8a2be2; /* Warna ungu kebiruan untuk judul */
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Menambahkan margin bawah */
+}
+
+.card-text {
+    color: #4b0082; /* Warna biru tua untuk teks */
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #6c757d; /* Warna abu-abu gelap untuk label input */
+    font-weight: bold;
+    margin-bottom: 10px; /* Menambahkan jarak di bawah label */
+    display: block; /* Menampilkan label sebagai blok */
+}
+
+.form-control {
+    border: 1px solid #e6e6e6; /* Warna sedikit berbeda dari latar belakang */
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #ffffff; /* Warna latar belakang putih */
+    color: #495057; /* Warna abu-abu gelap untuk teks input */
+}
+
+.btn-custom {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+}
+
+.btn-custom:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+.text-light {
+    color: #d1d1d1 !important;
+}
+
+.register-link {
+    margin-top: 20px; /* Menambahkan margin atas */
 }
