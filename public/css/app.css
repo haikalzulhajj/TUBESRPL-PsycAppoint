@@ -65,8 +65,8 @@ body {
 }
 
 .card-title {
-    color: #8a2be2;
-    font-size: 1.5rem;
+    color: #000000;
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
@@ -127,7 +127,7 @@ body {
 }
 
 .text-light {
-    color: #d1d1d1 !important;
+    color: #000000 !important;
 }
 
 .register-link {
