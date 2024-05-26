@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 body {
-    background: linear-gradient(to right, #ffffff, #ffffff); /* Ganti warna sesuai pilihan Anda */
+    background: linear-gradient(to right, #ffffff, #ffffff);
 }
 
 .container {
@@ -19,68 +21,93 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Menempatkan gambar di belakang elemen lainnya */
+    z-index: -1;
 }
 
 .background-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Memastikan gambar mencakup seluruh kontainer */
-    opacity: 0.4; /* Mengurangi opacity untuk memberikan kontras dengan kotak sign-in */
+    object-fit: cover;
+    opacity: 0.4;
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Menyamakan tinggi kontainer teks dan gambar */
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .text-container h1 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin: 20px 0; /* Menambahkan margin atas dan bawah */
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #f0c27b, #4b1248);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For non-webkit browsers */
+    color: transparent; /* For fallback */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
 }
 
 .card {
-    background-color: #ffffff; /* Latar belakang putih */
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
     text-align: center;
-    position: relative; /* Menambahkan posisi relatif untuk mengikuti kontainer */
-    z-index: 1; /* Menempatkan kotak sign-in di atas gambar */
+    position: relative;
+    z-index: 1;
 }
 
 .card-title {
-    color: #8a2be2; /* Warna ungu kebiruan untuk judul */
+    color: #8a2be2;
     font-size: 1.5rem;
-    margin-bottom: 20px; /* Menambahkan margin bawah */
+    margin-bottom: 20px;
 }
 
 .card-text {
-    color: #4b0082; /* Warna biru tua untuk teks */
+    color: #4b0082;
     font-size: 1rem;
     margin-bottom: 20px;
 }
 
 .form-group label {
-    color: #6c757d; /* Warna abu-abu gelap untuk label input */
+    color: #6c757d;
     font-weight: bold;
-    margin-bottom: 10px; /* Menambahkan jarak di bawah label */
-    display: block; /* Menampilkan label sebagai blok */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-right: 0;
+    align-items: center;
 }
 
 .form-control {
-    border: 1px solid #e6e6e6; /* Warna sedikit berbeda dari latar belakang */
+    border: 1px solid #e6e6e6;
     border-radius: 5px;
     font-size: 1rem;
     padding: 10px;
-    background-color: #ffffff; /* Warna latar belakang putih */
-    color: #495057; /* Warna abu-abu gelap untuk teks input */
+    background-color: #ffffff;
+    color: #495057;
+    height: calc(2.25rem + 2px);
+}
+
+.input-group .form-control {
+    border-left: 0;
+}
+
+.input-group-prepend .input-group-text {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: calc(2.25rem + 2px);
 }
 
 .btn-custom {
@@ -104,5 +131,13 @@ body {
 }
 
 .register-link {
-    margin-top: 20px; /* Menambahkan margin atas */
+    margin-top: 20px;
+}
+
+.sign-up-link {
+    transition: color 0.3s;
+}
+
+.sign-up-link:hover {
+    color: #007bff !important; /* Biru terang */
 }
