@@ -5,62 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-        .custom-bg-purple {
-            background-color: purple;
-        }
-    </style>
 </head>
 
 <body>
-<div class="">
-  <div class="row align-items-center">
-    <div class="col-md-6 text-center">
-      <img src="images/imageAuth2.jpg" alt="Image on Authentication" style="width: 60%;">
-      <h1 class="text-center">Your Journey <br> to Brighter Tomorrows</h1>
-    </div>
-    <div class="col-md-6 custom-bg-purple min-height-container d-flex align-items-center justify-content-center">
-      <div class="col-md-11">
-        <div class="card-text">
-          <h4 class="card-title fs-1 mb-2 text-white">Create Your Account</h4>
-          <p class="card-text fs-5 mb-5">Already have an account? 
-            <a href="/" class="text-white text-decoration-none"> Sign in </a>
-          </p>
+    <div class="container">
+        <div class="background-img-container">
+            <img src="images/imageAuth2.jpg" alt="Image on Authentication">
         </div>
-          @if ($errors->any())
-              <div class="alert alert-danger">
-                  @foreach ($errors->all() as $error)
-                      <p>{{ $error }}</p>
-                  @endforeach
-              </div>
-          @endif
-          <form method="post">
+        <div class="card">
+            <h4 class="card-title">Create New Account</h4>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
+            <form method="post">
                 @csrf
-                <div class="form-group">
-                    <input id="my-input" class="form-control input-lg mb-4" type="text" name="name" placeholder="Username" required>
+                <div class="form-group input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    </div>
+                    <input id="username" class="form-control" type="text" name="name" placeholder="Username" required>
                 </div>
-                <div class="form-group ">
-                    <input id="my-input" class="form-control input-lg mb-4" type="text" name="address" placeholder="Address" required>
+                <div class="form-group input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-house"></i></span>
+                    </div>
+                    <input id="address" class="form-control" type="text" name="address" placeholder="Address" required>
                 </div>
-                <div class="form-group ">
-                    <input id="my-input" class="form-control input-lg mb-4" type="number" name="phoneNo" placeholder="No. Telp" required>
+                <div class="form-group input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                    </div>
+                    <input id="phoneNo" class="form-control" type="number" name="phoneNo" placeholder="No. Telp" required>
                 </div>
-                <div class="form-group ">
-                    <input id="my-input" class="form-control input-lg mb-4" type="password" name="password" placeholder="Password" required>
+                <div class="form-group input-group mb-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    </div>
+                    <input id="password" class="form-control" type="password" name="password" placeholder="Password" required>
                 </div>
-                <div class="text-end">
-                    <button type="submit" name="register" id=""class="btn btn-white input-lg">
-                        Sign up
-                    </button>
-                </div>
+                <button type="submit" name="register" class="btn btn-custom">Sign up</button>
             </form>
-      </div>
+            <div class="register-link mt-3">
+                <p class="text-black text-decoration-none">Already have an account? 
+                    <a href="/" class="text-light text-decoration-none sign-in-link">Sign in</a>
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
