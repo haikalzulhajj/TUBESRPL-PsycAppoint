@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+h4 {
+  @apply text-base;
+}
+
+h5 {
+  @apply text-sm;
+}
+
+h6 {
+  @apply text-xs;
+}
+
+.ck-editor__editable_inline:not(.ck-comment__input *) {
+  font-size: 14px;
+  height: 500px;
+  overflow-y: auto;
+}
+
+.coupon {
+  mask-image: radial-gradient(circle at 20px 6px, transparent 6px, red 6.5px),
+    radial-gradient(closest-side circle at 50%, red 99%, transparent 100%);
+  mask-size:
+    100%,
+    6px 12px;
+  mask-repeat: repeat, repeat-y;
+  mask-position:
+    0 -6px,
+    17px;
+  mask-composite: source-out;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3d3d3;
+  border-radius: 1rem;
+}
